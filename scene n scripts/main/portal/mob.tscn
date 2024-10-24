@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://f81knc06e25"]
+
+[ext_resource type="Script" path="res://scene n scripts/main/portal/mob.gd" id="1_b3ud4"]
+[ext_resource type="Texture2D" uid="uid://d3riairvfmc0c" path="res://assets/main/inportal/temptenemy.png" id="1_pdvf8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bvw5x"]
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0yj0"]
+atlas = ExtResource("1_pdvf8")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phnoe"]
+atlas = ExtResource("1_pdvf8")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vxad"]
+atlas = ExtResource("1_pdvf8")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0lbm"]
+atlas = ExtResource("1_pdvf8")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csu21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0yj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phnoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vxad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0lbm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wue7k"]
+radius = 12.0
+height = 32.0
+
+[node name="mob" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_b3ud4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_bvw5x")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_csu21")
+frame = 3
+frame_progress = 0.916003
+metadata/_edit_lock_ = true
+
+[node name="kena" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kena"]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_wue7k")
+
+[connection signal="body_entered" from="kena" to="." method="_on_kena_body_entered"]
