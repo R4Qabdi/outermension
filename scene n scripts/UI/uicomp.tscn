@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb77iu1udalwh"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="uicomputer" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -14,16 +14,31 @@ offset_left = 128.0
 offset_top = 96.0
 offset_right = 1024.0
 offset_bottom = 512.0
-current_tab = 2
+current_tab = 0
 
-[node name="campaign" type="TabBar" parent="Control/TabContainer"]
+[node name="WELCOME" type="TabBar" parent="Control/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="Control/TabContainer/WELCOME"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 97.0
+offset_right = 560.0
+offset_bottom = 120.0
+text = "lorem ipsum dolor si amet
+kdjkdnskfdnkdfnkdfnkdf
+
+ksdfnksdnfkwnfekowf"
+
+[node name="CAMPAIGN" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
 tab_alignment = 1
 tab_close_display_policy = 2
-metadata/_tab_index = 0
+metadata/_tab_index = 1
 
-[node name="TabContainer" type="TabContainer" parent="Control/TabContainer/campaign"]
+[node name="TabContainer" type="TabContainer" parent="Control/TabContainer/CAMPAIGN"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 33.0
@@ -31,36 +46,36 @@ offset_right = 864.0
 offset_bottom = 386.0
 current_tab = 0
 
-[node name="tutorial" type="TabBar" parent="Control/TabContainer/campaign/TabContainer"]
+[node name="tutorial" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="hills" type="TabBar" parent="Control/TabContainer/campaign/TabContainer"]
+[node name="hills" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="castle" type="TabBar" parent="Control/TabContainer/campaign/TabContainer"]
+[node name="castle" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="desert" type="TabBar" parent="Control/TabContainer/campaign/TabContainer"]
+[node name="desert" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="steampunk" type="TabBar" parent="Control/TabContainer/campaign/TabContainer"]
+[node name="steampunk" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
-[node name="endless" type="TabBar" parent="Control/TabContainer"]
+[node name="ENDLESS" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 1
+metadata/_tab_index = 2
 
-[node name="scoretab" type="TabContainer" parent="Control/TabContainer/endless"]
+[node name="scoretab" type="TabContainer" parent="Control/TabContainer/ENDLESS"]
 layout_mode = 0
 offset_left = 256.0
 offset_top = 33.0
@@ -68,28 +83,28 @@ offset_right = 864.0
 offset_bottom = 385.0
 current_tab = 0
 
-[node name="local" type="TabBar" parent="Control/TabContainer/endless/scoretab"]
+[node name="local" type="TabBar" parent="Control/TabContainer/ENDLESS/scoretab"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="scorelist" type="ItemList" parent="Control/TabContainer/endless/scoretab/local"]
+[node name="scorelist" type="ItemList" parent="Control/TabContainer/ENDLESS/scoretab/local"]
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 1.0
 
-[node name="global" type="TabBar" parent="Control/TabContainer/endless/scoretab"]
+[node name="global" type="TabBar" parent="Control/TabContainer/ENDLESS/scoretab"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="scorelist" type="ItemList" parent="Control/TabContainer/endless/scoretab/global"]
+[node name="scorelist" type="ItemList" parent="Control/TabContainer/ENDLESS/scoretab/global"]
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 1.0
 
-[node name="select world" type="OptionButton" parent="Control/TabContainer/endless"]
+[node name="select world" type="OptionButton" parent="Control/TabContainer/ENDLESS"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 33.0
@@ -104,7 +119,7 @@ popup/item_2/id = 2
 popup/item_3/text = "steampunk"
 popup/item_3/id = 3
 
-[node name="ranked" type="CheckButton" parent="Control/TabContainer/endless"]
+[node name="ranked" type="CheckButton" parent="Control/TabContainer/ENDLESS"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 161.0
@@ -112,38 +127,121 @@ offset_right = 224.0
 offset_bottom = 225.0
 text = "record to global"
 
-[node name="start" type="Button" parent="Control/TabContainer/endless"]
+[node name="start" type="Button" parent="Control/TabContainer/ENDLESS"]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 289.0
 offset_right = 224.0
 offset_bottom = 353.0
 text = "start"
 
-[node name="skin" type="TabBar" parent="Control/TabContainer"]
-layout_mode = 2
-metadata/_tab_index = 2
-
-[node name="weapons" type="TabBar" parent="Control/TabContainer"]
+[node name="AVATAR" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="skills" type="TabBar" parent="Control/TabContainer"]
+[node name="TabContainer" type="TabContainer" parent="Control/TabContainer/AVATAR"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 33.0
+offset_right = 864.0
+offset_bottom = 385.0
+current_tab = 0
+
+[node name="CHARACTER" type="TabBar" parent="Control/TabContainer/AVATAR/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="AVATAR" type="TabBar" parent="Control/TabContainer/AVATAR/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="DISPLAY NAME" type="TabBar" parent="Control/TabContainer/AVATAR/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="WEAPONS" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
-[node name="achievement" type="TabBar" parent="Control/TabContainer"]
+[node name="ItemList" type="ItemList" parent="Control/TabContainer/WEAPONS"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 864.0
+offset_bottom = 385.0
+item_count = 6
+max_columns = 3
+same_column_width = true
+fixed_column_width = 268
+item_0/text = "SWORD"
+item_1/text = "BOW"
+item_2/text = "CROSSBOW"
+item_3/text = "DAGGER"
+item_4/text = "SHIT"
+item_5/text = "GANJAR PRANOWO"
+
+[node name="SKILLS" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 5
 
-[node name="options" type="TabBar" parent="Control/TabContainer"]
+[node name="ItemList" type="ItemList" parent="Control/TabContainer/SKILLS"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 864.0
+offset_bottom = 385.0
+item_count = 6
+max_columns = 3
+same_column_width = true
+fixed_column_width = 268
+item_0/text = "SWORD"
+item_1/text = "BOW"
+item_2/text = "CROSSBOW"
+item_3/text = "DAGGER"
+item_4/text = "SHIT"
+item_5/text = "GANJAR PRANOWO"
+
+[node name="ACHIEVEMENTS" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 6
 
-[node name="save" type="TabBar" parent="Control/TabContainer"]
+[node name="ItemList" type="ItemList" parent="Control/TabContainer/ACHIEVEMENTS"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 864.0
+offset_bottom = 385.0
+item_count = 6
+max_columns = 3
+same_column_width = true
+fixed_column_width = 268
+item_0/text = "SWORD"
+item_1/text = "BOW"
+item_2/text = "CROSSBOW"
+item_3/text = "DAGGER"
+item_4/text = "SHIT"
+item_5/text = "GANJAR PRANOWO"
+
+[node name="OPTIONS" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 7
+
+[node name="SAVE" type="TabBar" parent="Control/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 8
+
+[node name="exit" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 976.0
+offset_top = 97.0
+offset_right = 1024.0
+offset_bottom = 128.0
+text = "X"

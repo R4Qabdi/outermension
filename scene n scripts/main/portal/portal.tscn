@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://coc1or1dgsikm"]
+[gd_scene load_steps=12 format=3 uid="uid://coc1or1dgsikm"]
 
 [ext_resource type="Texture2D" uid="uid://bymqf3wpcht6l" path="res://assets/main/tileset.png" id="1_3dd0o"]
 [ext_resource type="PackedScene" uid="uid://ck5tomos5i6if" path="res://scene n scripts/main/portal/player.tscn" id="2_k7ru7"]
@@ -7,8 +7,9 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_ojros"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_gl686"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_yeast"]
+[ext_resource type="PackedScene" uid="uid://bb77iu1udalwh" path="res://scene n scripts/UI/uicomp.tscn" id="8_0j3f4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_174h0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecjxl"]
 texture = ExtResource("1_3dd0o")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -149,7 +150,7 @@ terrain_set_0/terrain_1/name = "1 wall"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 terrain_set_0/terrain_2/name = "2 filling"
 terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_174h0")
+sources/0 = SubResource("TileSetAtlasSource_ecjxl")
 
 [sub_resource type="Resource" id="Resource_3pdeu"]
 script = ExtResource("6_gl686")
@@ -199,3 +200,10 @@ limit_top = 0
 position = Vector2(264, 256)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="uicomputer" parent="." instance=ExtResource("8_0j3f4")]
+visible = false
+
+[connection signal="pressed" from="uicomputer/Control/exit" to="pcompute" method="_on_exit_pressed"]
+
+[editable path="uicomputer"]

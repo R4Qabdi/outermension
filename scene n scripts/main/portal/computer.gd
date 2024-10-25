@@ -4,7 +4,7 @@ var is_inrange : bool
 func _process(delta: float) -> void:
 	if is_inrange:
 		if Input.is_action_just_pressed("interact"):
-			print("yup")
+			$"../uicomputer".visible = true
 	else :
 		pass
 
@@ -16,3 +16,8 @@ func _on_interact_body_entered(body: Node2D) -> void:
 func _on_interact_body_exited(body: Node2D) -> void:
 	is_inrange = false
 	print("no komputer")
+
+
+func _on_exit_pressed() -> void:
+	$"../uicomputer".visible = false
+	
