@@ -81,6 +81,7 @@ interact={
 
 [input_devices]
 
+pointing/emulate_touch_from_mouse=true
 pointing/android/enable_long_press_as_right_click=true
 
 [physics]

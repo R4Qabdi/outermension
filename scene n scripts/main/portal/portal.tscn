@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://coc1or1dgsikm"]
+[gd_scene load_steps=13 format=3 uid="uid://coc1or1dgsikm"]
 
 [ext_resource type="Texture2D" uid="uid://bymqf3wpcht6l" path="res://assets/main/tileset.png" id="1_3dd0o"]
 [ext_resource type="PackedScene" uid="uid://ck5tomos5i6if" path="res://scene n scripts/main/portal/player.tscn" id="2_k7ru7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_gl686"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_yeast"]
 [ext_resource type="PackedScene" uid="uid://bb77iu1udalwh" path="res://scene n scripts/UI/uicomp.tscn" id="8_0j3f4"]
+[ext_resource type="PackedScene" uid="uid://ctnkgxy4ijjs4" path="res://scene n scripts/UI/control.tscn" id="9_vrsc0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecjxl"]
 texture = ExtResource("1_3dd0o")
@@ -203,6 +204,8 @@ position = Vector2(264, 256)
 
 [node name="uicomputer" parent="." instance=ExtResource("8_0j3f4")]
 visible = false
+
+[node name="ControlLayer" parent="." instance=ExtResource("9_vrsc0")]
 
 [connection signal="pressed" from="uicomputer/Control/exit" to="pcompute" method="_on_exit_pressed"]
 
