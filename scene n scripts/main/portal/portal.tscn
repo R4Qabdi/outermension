@@ -144,6 +144,7 @@ texture = ExtResource("1_3dd0o")
 
 [sub_resource type="TileSet" id="TileSet_tjoqa"]
 physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 129
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "0 ground"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
@@ -200,10 +201,63 @@ limit_top = 0
 [node name="player" parent="player" instance=ExtResource("2_k7ru7")]
 position = Vector2(264, 256)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
 [node name="uicomputer" parent="." instance=ExtResource("8_0j3f4")]
+layer = 2
 visible = false
+
+[node name="2-1" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="0"]
+layout_mode = 0
+
+[node name="2-2" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="1"]
+layout_mode = 0
+
+[node name="2-3" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="2"]
+layout_mode = 0
+
+[node name="2-4" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="3"]
+layout_mode = 0
+
+[node name="2-5" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="4"]
+layout_mode = 0
+
+[node name="2-S" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="5"]
+layout_mode = 0
+
+[node name="3-1" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="0"]
+layout_mode = 0
+
+[node name="3-2" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="1"]
+layout_mode = 0
+
+[node name="3-3" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="2"]
+layout_mode = 0
+
+[node name="3-4" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="3"]
+layout_mode = 0
+
+[node name="3-5" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="4"]
+layout_mode = 0
+
+[node name="3-S" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="5"]
+layout_mode = 0
+
+[node name="4-1" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="0"]
+layout_mode = 0
+
+[node name="4-2" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="1"]
+layout_mode = 0
+
+[node name="4-3" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="2"]
+layout_mode = 0
+
+[node name="4-4" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="3"]
+layout_mode = 0
+
+[node name="4-5" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="4"]
+layout_mode = 0
+
+[node name="4-S" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="5"]
+layout_mode = 0
 
 [node name="ControlLayer" parent="." instance=ExtResource("9_vrsc0")]
 

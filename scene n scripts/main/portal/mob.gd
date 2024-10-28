@@ -16,4 +16,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_kena_body_entered(body) -> void:
-	print("WOOOIIIIIIIIIIII")
+	print("AAAAAAAAAA")
+	queue_free()

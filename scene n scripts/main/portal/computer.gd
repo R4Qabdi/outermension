@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var is_inrange : bool
+@onready var is_inrange = false
 
 func _process(delta: float) -> void:
 	if is_inrange:

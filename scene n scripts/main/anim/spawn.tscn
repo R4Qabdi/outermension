@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://dl07m0gj0g3xr"]
+
+[ext_resource type="Texture2D" uid="uid://doslfos72d0xh" path="res://assets/main/implode.png" id="1_1h5bg"]
+[ext_resource type="Script" path="res://scene n scripts/main/anim/spawn.gd" id="1_b2vxa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cutc1"]
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxom3"]
+atlas = ExtResource("1_1h5bg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am65s"]
+atlas = ExtResource("1_1h5bg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_166d2"]
+atlas = ExtResource("1_1h5bg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5luu"]
+atlas = ExtResource("1_1h5bg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oo4qg"]
+atlas = ExtResource("1_1h5bg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt8hm"]
+atlas = ExtResource("1_1h5bg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq454"]
+atlas = ExtResource("1_1h5bg")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg8dl"]
+atlas = ExtResource("1_1h5bg")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvl4p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxom3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am65s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_166d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5luu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oo4qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt8hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq454")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg8dl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="spawn" type="Area2D"]
+script = ExtResource("1_b2vxa")
+
+[node name="kenak" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_cutc1")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lvl4p")
+frame_progress = 0.851974
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

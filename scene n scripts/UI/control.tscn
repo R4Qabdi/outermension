@@ -9,14 +9,14 @@ script = ExtResource("1_ugnge")
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="Virtual joystick left" parent="UI" instance=ExtResource("1_2ojfg")]
+[node name="move" parent="UI" instance=ExtResource("1_2ojfg")]
 joystick_mode = 1
 action_left = "kiri"
 action_right = "kanan"
 action_up = "naik"
 action_down = "turun"
 
-[node name="Virtual joystick right" parent="UI" instance=ExtResource("1_2ojfg")]
+[node name="attack" parent="UI" instance=ExtResource("1_2ojfg")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_right = 1.0
@@ -36,6 +36,7 @@ offset_left = -80.0
 offset_top = 16.0
 offset_right = -14.0
 offset_bottom = 80.0
+toggle_mode = true
 text = "gear"
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
@@ -59,7 +60,7 @@ anchor_top = -0.333
 anchor_right = 0.5
 anchor_bottom = -0.333
 offset_left = -416.0
-offset_top = 159.872
+offset_top = 127.872
 offset_right = 416.0
 offset_bottom = 511.872
 current_tab = 0
@@ -68,10 +69,68 @@ current_tab = 0
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="CheckButton" type="CheckButton" parent="MenuLayer/Panel/TabContainer/Control"]
+[node name="joystick" type="CheckButton" parent="MenuLayer/Panel/TabContainer/Control"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 65.0
-offset_right = 96.0
-offset_bottom = 97.0
+offset_top = 33.0
+offset_right = 184.0
+offset_bottom = 65.0
+button_pressed = true
 text = "show joystick"
+
+[node name="CheckButton2" type="CheckButton" parent="MenuLayer/Panel/TabContainer/Control"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 97.0
+offset_right = 184.0
+offset_bottom = 129.0
+text = "bRuh"
+
+[node name="volume" type="TabBar" parent="MenuLayer/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="SFXvolume" type="HSlider" parent="MenuLayer/Panel/TabContainer/volume"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 224.0
+offset_bottom = 65.0
+
+[node name="mute" type="Button" parent="MenuLayer/Panel/TabContainer/volume/SFXvolume"]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 224.0
+offset_bottom = 32.0
+
+[node name="MUSICvolume" type="HSlider" parent="MenuLayer/Panel/TabContainer/volume"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 81.0
+offset_right = 224.0
+offset_bottom = 113.0
+
+[node name="mute2" type="Button" parent="MenuLayer/Panel/TabContainer/volume/MUSICvolume"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = -48.0
+offset_right = 224.0
+offset_bottom = -16.0
+
+[node name="graphics" type="TabBar" parent="MenuLayer/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="exit" type="Button" parent="MenuLayer/Panel"]
+layout_mode = 2
+offset_left = 832.0
+offset_right = 864.0
+offset_bottom = 32.0
+text = "X"
+
+[connection signal="toggled" from="menu" to="." method="_on_menu_toggled"]
+[connection signal="toggled" from="MenuLayer/Panel/TabContainer/Control/joystick" to="." method="_on_check_button_toggled"]
+[connection signal="value_changed" from="MenuLayer/Panel/TabContainer/volume/SFXvolume" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="MenuLayer/Panel/exit" to="." method="_on_exit_pressed"]

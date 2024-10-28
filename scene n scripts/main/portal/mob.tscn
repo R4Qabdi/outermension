@@ -63,9 +63,12 @@ frame_progress = 0.916003
 metadata/_edit_lock_ = true
 
 [node name="kena" type="Area2D" parent="."]
+collision_layer = 129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kena"]
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_wue7k")
+
+[node name="Node2D" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="kena" to="." method="_on_kena_body_entered"]

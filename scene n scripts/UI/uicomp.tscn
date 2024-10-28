@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://bb77iu1udalwh"]
+[gd_scene load_steps=3 format=3 uid="uid://bb77iu1udalwh"]
 
-[node name="uicomputer" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://b8v22tvijq8ov" path="res://icon.svg" id="1_02d43"]
+[ext_resource type="Script" path="res://scene n scripts/UI/uicomp.gd" id="1_hu7le"]
+
+[node name="uicomputer" type="CanvasLayer"]
+script = ExtResource("1_hu7le")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -14,9 +18,10 @@ offset_left = 128.0
 offset_top = 96.0
 offset_right = 1024.0
 offset_bottom = 512.0
-current_tab = 0
+current_tab = 2
 
 [node name="WELCOME" type="TabBar" parent="Control/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -46,32 +51,198 @@ offset_right = 864.0
 offset_bottom = 386.0
 current_tab = 0
 
-[node name="tutorial" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
+[node name="hills" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="hills" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
+[node name="1-1" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/hills"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 97.0
+offset_right = 176.0
+offset_bottom = 257.0
+
+[node name="1-2" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/hills"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 97.0
+offset_right = 336.0
+offset_bottom = 257.0
+
+[node name="1-3" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/hills"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 97.0
+offset_right = 496.0
+offset_bottom = 257.0
+
+[node name="1-4" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/hills"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 97.0
+offset_right = 656.0
+offset_bottom = 257.0
+
+[node name="1-5" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/hills"]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 97.0
+offset_right = 816.0
+offset_bottom = 257.0
+
+[node name="1-S" type="Button" parent="Control/TabContainer/CAMPAIGN/TabContainer/hills"]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 33.0
+offset_right = 816.0
+offset_bottom = 81.0
+text = "1-S"
 
 [node name="castle" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 2
+metadata/_tab_index = 1
+
+[node name="2-1" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/castle"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 97.0
+offset_right = 176.0
+offset_bottom = 257.0
+
+[node name="2-2" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/castle"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 97.0
+offset_right = 336.0
+offset_bottom = 257.0
+
+[node name="2-3" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/castle"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 97.0
+offset_right = 496.0
+offset_bottom = 257.0
+
+[node name="2-4" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/castle"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 97.0
+offset_right = 656.0
+offset_bottom = 257.0
+
+[node name="2-5" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/castle"]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 97.0
+offset_right = 816.0
+offset_bottom = 257.0
+
+[node name="2-S" type="Button" parent="Control/TabContainer/CAMPAIGN/TabContainer/castle"]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 33.0
+offset_right = 816.0
+offset_bottom = 81.0
+text = "1-S"
 
 [node name="desert" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 3
+metadata/_tab_index = 2
+
+[node name="3-1" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/desert"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 97.0
+offset_right = 176.0
+offset_bottom = 257.0
+
+[node name="3-2" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/desert"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 97.0
+offset_right = 336.0
+offset_bottom = 257.0
+
+[node name="3-3" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/desert"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 97.0
+offset_right = 496.0
+offset_bottom = 257.0
+
+[node name="3-4" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/desert"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 97.0
+offset_right = 656.0
+offset_bottom = 257.0
+
+[node name="3-5" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/desert"]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 97.0
+offset_right = 816.0
+offset_bottom = 257.0
+
+[node name="3-S" type="Button" parent="Control/TabContainer/CAMPAIGN/TabContainer/desert"]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 33.0
+offset_right = 816.0
+offset_bottom = 81.0
+text = "1-S"
 
 [node name="steampunk" type="TabBar" parent="Control/TabContainer/CAMPAIGN/TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 4
+metadata/_tab_index = 3
+
+[node name="4-1" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/steampunk"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 97.0
+offset_right = 176.0
+offset_bottom = 257.0
+
+[node name="4-2" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/steampunk"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 97.0
+offset_right = 336.0
+offset_bottom = 257.0
+
+[node name="4-3" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/steampunk"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 97.0
+offset_right = 496.0
+offset_bottom = 257.0
+
+[node name="4-4" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/steampunk"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 97.0
+offset_right = 656.0
+offset_bottom = 257.0
+
+[node name="4-5" type="TextureButton" parent="Control/TabContainer/CAMPAIGN/TabContainer/steampunk"]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 97.0
+offset_right = 816.0
+offset_bottom = 257.0
+
+[node name="4-S" type="Button" parent="Control/TabContainer/CAMPAIGN/TabContainer/steampunk"]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 33.0
+offset_right = 816.0
+offset_bottom = 81.0
+text = "1-S"
 
 [node name="ENDLESS" type="TabBar" parent="Control/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -107,9 +278,11 @@ offset_top = 1.0
 [node name="select world" type="OptionButton" parent="Control/TabContainer/ENDLESS"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 33.0
+offset_top = 177.0
 offset_right = 224.0
-offset_bottom = 97.0
+offset_bottom = 241.0
+alignment = 1
+selected = 0
 item_count = 4
 popup/item_0/text = "hills"
 popup/item_1/text = "castle"
@@ -119,13 +292,14 @@ popup/item_2/id = 2
 popup/item_3/text = "steampunk"
 popup/item_3/id = 3
 
-[node name="ranked" type="CheckButton" parent="Control/TabContainer/ENDLESS"]
+[node name="ranked" type="Button" parent="Control/TabContainer/ENDLESS"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 161.0
+offset_top = 65.0
 offset_right = 224.0
-offset_bottom = 225.0
-text = "record to global"
+offset_bottom = 129.0
+toggle_mode = true
+text = "record score to global"
 
 [node name="start" type="Button" parent="Control/TabContainer/ENDLESS"]
 layout_mode = 0
@@ -135,32 +309,114 @@ offset_right = 224.0
 offset_bottom = 353.0
 text = "start"
 
-[node name="AVATAR" type="TabBar" parent="Control/TabContainer"]
+[node name="ACCOUNTS" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="TabContainer" type="TabContainer" parent="Control/TabContainer/AVATAR"]
+[node name="TabContainer" type="TabContainer" parent="Control/TabContainer/ACCOUNTS"]
 layout_mode = 0
-offset_left = 288.0
+offset_left = 384.0
 offset_top = 33.0
 offset_right = 864.0
 offset_bottom = 385.0
 current_tab = 0
 
-[node name="CHARACTER" type="TabBar" parent="Control/TabContainer/AVATAR/TabContainer"]
+[node name="CHARACTER" type="TabBar" parent="Control/TabContainer/ACCOUNTS/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="AVATAR" type="TabBar" parent="Control/TabContainer/AVATAR/TabContainer"]
+[node name="AVATAR" type="TabBar" parent="Control/TabContainer/ACCOUNTS/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="DISPLAY NAME" type="TabBar" parent="Control/TabContainer/AVATAR/TabContainer"]
+[node name="DISPLAY NAME" type="TabBar" parent="Control/TabContainer/ACCOUNTS/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="ACHIEVEMENTS" type="ItemList" parent="Control/TabContainer/ACCOUNTS/TabContainer"]
+visible = false
+layout_mode = 2
+item_count = 6
+max_columns = 3
+same_column_width = true
+fixed_column_width = 268
+item_0/text = "SWORD"
+item_1/text = "BOW"
+item_2/text = "CROSSBOW"
+item_3/text = "DAGGER"
+item_4/text = "SHIT"
+item_5/text = "GANJAR PRANOWO"
+metadata/_tab_index = 3
+
+[node name="loginPanel" type="Panel" parent="Control/TabContainer/ACCOUNTS"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 161.0
+offset_right = 352.0
+offset_bottom = 385.0
+
+[node name="login" type="Button" parent="Control/TabContainer/ACCOUNTS/loginPanel"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 320.0
+offset_bottom = 128.0
+text = "Log-in
+"
+
+[node name="signup" type="Button" parent="Control/TabContainer/ACCOUNTS/loginPanel"]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 192.0
+text = "Sign-up
+"
+
+[node name="pass" type="LineEdit" parent="Control/TabContainer/ACCOUNTS/loginPanel"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 32.0
+offset_right = 320.0
+offset_bottom = 63.0
+placeholder_text = "Password"
+
+[node name="user" type="LineEdit" parent="Control/TabContainer/ACCOUNTS/loginPanel"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 144.0
+offset_bottom = 63.0
+placeholder_text = "Username"
+
+[node name="accpanel" type="Panel" parent="Control/TabContainer/ACCOUNTS"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 352.0
+offset_bottom = 129.0
+
+[node name="avatar" type="Sprite2D" parent="Control/TabContainer/ACCOUNTS/accpanel"]
+position = Vector2(48, 48)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_02d43")
+
+[node name="name" type="Label" parent="Control/TabContainer/ACCOUNTS/accpanel"]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 304.0
+offset_bottom = 32.0
+text = "Guest"
+vertical_alignment = 1
+
+[node name="level" type="Label" parent="Control/TabContainer/ACCOUNTS/accpanel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 32.0
+offset_right = 304.0
+offset_bottom = 64.0
+text = "level 1"
+vertical_alignment = 1
 
 [node name="WEAPONS" type="TabBar" parent="Control/TabContainer"]
 visible = false
@@ -206,37 +462,15 @@ item_3/text = "DAGGER"
 item_4/text = "SHIT"
 item_5/text = "GANJAR PRANOWO"
 
-[node name="ACHIEVEMENTS" type="TabBar" parent="Control/TabContainer"]
+[node name="OPTIONS" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 6
 
-[node name="ItemList" type="ItemList" parent="Control/TabContainer/ACHIEVEMENTS"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 33.0
-offset_right = 864.0
-offset_bottom = 385.0
-item_count = 6
-max_columns = 3
-same_column_width = true
-fixed_column_width = 268
-item_0/text = "SWORD"
-item_1/text = "BOW"
-item_2/text = "CROSSBOW"
-item_3/text = "DAGGER"
-item_4/text = "SHIT"
-item_5/text = "GANJAR PRANOWO"
-
-[node name="OPTIONS" type="TabBar" parent="Control/TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 7
-
 [node name="SAVE" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 8
+metadata/_tab_index = 7
 
 [node name="exit" type="Button" parent="Control"]
 layout_mode = 2
@@ -245,3 +479,5 @@ offset_top = 97.0
 offset_right = 1024.0
 offset_bottom = 128.0
 text = "X"
+
+[connection signal="pressed" from="Control/TabContainer/ENDLESS/start" to="." method="_on_start_pressed"]
