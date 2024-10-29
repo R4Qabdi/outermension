@@ -1,10 +1,19 @@
 extends CharacterBody2D
 @onready var is_inrange = false
-
+signal buka 
+signal tutup
+var tog = true
 func _process(delta: float) -> void:
 	if is_inrange:
 		if Input.is_action_just_pressed("interact"):
-			$"../uicomputer".visible = true
+			if tog:
+				$"../uicomputer".visible = true
+				buka.emit()
+				tog = not tog
+			elif !tog: 
+				tog = not tog
+				_on_exit_pressed()
+				tutup.emit()
 	else :
 		pass
 
@@ -19,5 +28,6 @@ func _on_interact_body_exited(body: Node2D) -> void:
 
 
 func _on_exit_pressed() -> void:
+	tog = true
 	$"../uicomputer".visible = false
 	

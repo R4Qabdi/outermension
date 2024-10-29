@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://coc1or1dgsikm"]
+[gd_scene load_steps=14 format=3 uid="uid://coc1or1dgsikm"]
 
 [ext_resource type="Texture2D" uid="uid://bymqf3wpcht6l" path="res://assets/main/tileset.png" id="1_3dd0o"]
 [ext_resource type="PackedScene" uid="uid://ck5tomos5i6if" path="res://scene n scripts/main/portal/player.tscn" id="2_k7ru7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_yeast"]
 [ext_resource type="PackedScene" uid="uid://bb77iu1udalwh" path="res://scene n scripts/UI/uicomp.tscn" id="8_0j3f4"]
 [ext_resource type="PackedScene" uid="uid://ctnkgxy4ijjs4" path="res://scene n scripts/UI/control.tscn" id="9_vrsc0"]
+[ext_resource type="AudioStream" uid="uid://bt5s2r5y5cvbb" path="res://assets/music/Vibing Over Venus.mp3" id="10_jjk21"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecjxl"]
 texture = ExtResource("1_3dd0o")
@@ -206,61 +207,124 @@ layer = 2
 visible = false
 
 [node name="2-1" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="0"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="2-2" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="1"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="2-3" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="2"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="2-4" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="2-5" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="4"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="2-S" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/castle" index="5"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 48.0
 
 [node name="3-1" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="0"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="3-2" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="1"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="3-3" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="2"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="3-4" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="3-5" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="4"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="3-S" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/desert" index="5"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 48.0
 
 [node name="4-1" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="0"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="4-2" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="1"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="4-3" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="2"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="4-4" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="4-5" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="4"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="4-S" parent="uicomputer/Control/TabContainer/CAMPAIGN/TabContainer/steampunk" index="5"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 48.0
 
 [node name="ControlLayer" parent="." instance=ExtResource("9_vrsc0")]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_jjk21")
+autoplay = true
+bus = &"Music"
+parameters/looping = false
+
+[connection signal="buka" from="pcompute" to="ControlLayer" method="_on_pcompute_buka"]
+[connection signal="tutup" from="pcompute" to="ControlLayer" method="_on_pcompute_tutup"]
 [connection signal="pressed" from="uicomputer/Control/exit" to="pcompute" method="_on_exit_pressed"]
+[connection signal="pressed" from="uicomputer/Control/exit" to="ControlLayer" method="_on_pcompute_exit_pressed"]
 
 [editable path="uicomputer"]

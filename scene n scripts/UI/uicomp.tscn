@@ -462,15 +462,10 @@ item_3/text = "DAGGER"
 item_4/text = "SHIT"
 item_5/text = "GANJAR PRANOWO"
 
-[node name="OPTIONS" type="TabBar" parent="Control/TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 6
-
 [node name="SAVE" type="TabBar" parent="Control/TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 7
+metadata/_tab_index = 6
 
 [node name="exit" type="Button" parent="Control"]
 layout_mode = 2

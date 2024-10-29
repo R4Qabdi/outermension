@@ -2,11 +2,13 @@ extends CharacterBody2D
 
 
 @onready var mob = preload("res://scene n scripts/main/anim/spawn.tscn")
-
+var darah = 100
 
 const SPEED = 300.0
 
 func _physics_process(delta: float) -> void:
+	
+	#ini pencet r untuk dibug biar mobnya keluar guys
 	if Input.is_action_just_pressed("spawn"):
 		var ana = mob.instantiate()
 		var spawnable = false
@@ -15,32 +17,44 @@ func _physics_process(delta: float) -> void:
 			if true :
 				spawnable = true
 		get_parent().get_parent().add_child(ana)
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("kiri", "kanan")
-	if direction:
-		velocity.x = direction * SPEED
+	
+	#ini sistem buat bisa gerak kemana karakternya
+	#nentuin hadapannya juga
+	var directionx := Input.get_axis("kiri", "kanan")
+	if directionx:
+		velocity.x = directionx * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	direction = Input.get_axis("naik", "turun")
-	if direction:
-		velocity.y = direction * SPEED
+	var directiony = Input.get_axis("naik", "turun")
+	if directiony:
+		velocity.y = directiony * SPEED
 	else:
 		velocity.y = move_toward(velocity.x, 0, SPEED)
 	
-	var pex = velocity.x
-	var pey = velocity.y
+	#ini dipake biar pendek aja nama variabelnya
+	#fungsinya beda soalnya makanya aku ganti
+	var pex = directionx
+	var pey = directiony
 	
-	if pex > 0:
-		$anim.play("kanan")
-	elif pex < 0:
+	#ini baru berfungsi agar animasinya menghadap kemana
+	if pey > -0.5 and pey < 0.5 and pex > 0:
+		$anim.play("kanan") 
+	elif pey > -0.5 and pey < 0.5 and pex < 0:
 		$anim.play("kiri")
-	if pey > 0:
+	elif  pey > 0:
 		$anim.play("bawah")
-	elif pey < 0:
+	elif  pey < 0:
 		$anim.play("atas")
-	
-	if pey==0&&pex==0:
+	 
+	#ini berfungsi biar animasinya berhenti
+	if pey == 0 and pex == 0:
 		$anim.stop()
 	
 	move_and_slide()
+
+
+func _on_bunny_hit() -> void:
+	darah -= 5
+	print(darah)
+	global.player["darah"] = darah
+	
