@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://dqg8yvikrxwt2"]
+[gd_scene load_steps=27 format=3 uid="uid://dqg8yvikrxwt2"]
 
+[ext_resource type="Script" path="res://scene n scripts/dimen1/hills.gd" id="1_576hr"]
 [ext_resource type="Texture2D" uid="uid://bymqf3wpcht6l" path="res://assets/main/tileset.png" id="1_ecxvt"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator.gd" id="2_hmwb3"]
 [ext_resource type="Script" path="res://addons/gaea/modifiers/2D/modifier_2d.gd" id="3_pdihj"]
@@ -233,6 +234,7 @@ transition = 0
 ease = 2
 
 [node name="hills" type="Node2D"]
+script = ExtResource("1_576hr")
 
 [node name="map" type="TileMap" parent="."]
 position = Vector2(3, -1)
@@ -397,6 +399,9 @@ autoplay = true
 bus = &"Music"
 parameters/looping = false
 
+[node name="enemies" type="Node2D" parent="."]
+
+[connection signal="gakena" from="bunny" to="player/player" method="_on_bunny_gakena"]
 [connection signal="hit" from="bunny" to="player/player" method="_on_bunny_hit"]
 
 [editable path="uicomputer"]

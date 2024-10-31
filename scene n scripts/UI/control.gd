@@ -11,17 +11,16 @@ var settings = {
 }
 var temp
 
-func _process(_delta: float) -> void:
-	$Bardarah.value = global.player["darah"]
 
 func _ready() -> void:
+	
 	if global.settings["JoystickOn"]:
 		#buka_joystick()
 		pass
 	elif !global.settings["JoystickOn"]:
 		tutup_joystick()
 	
-	$Bardarah.value = global.player["darah"]
+	$Bardarah.value = 60
 
 func _on_menu_toggled(toggled_on: bool) -> void:
 	if toggled_on:
@@ -124,10 +123,8 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 	elif !toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
-
 func _on_exit_2_main_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene n scripts/main/mainmenu.tscn")
-
 
 func _on_exit_2_portal_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene n scripts/main/portal/portal.tscn")

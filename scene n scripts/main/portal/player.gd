@@ -1,13 +1,19 @@
 extends CharacterBody2D
 
-
+#@onready var bunny: player = $"../../bunny"d
 @onready var mob = preload("res://scene n scripts/main/anim/spawn.tscn")
-var darah = 100
+var darah = 100.0
 
 const SPEED = 300.0
+#var kena = false
+
+#func hiting(ambil_darah) -> void:
+	#print(darah)
+	#darah -= ambil_darah 
+
 
 func _physics_process(delta: float) -> void:
-	
+
 	#ini pencet r untuk dibug biar mobnya keluar guys
 	if Input.is_action_just_pressed("spawn"):
 		var ana = mob.instantiate()
@@ -50,11 +56,11 @@ func _physics_process(delta: float) -> void:
 	if pey == 0 and pex == 0:
 		$anim.stop()
 	
-	move_and_slide()
-
-
-func _on_bunny_hit() -> void:
-	darah -= 5
-	print(darah)
-	global.player["darah"] = darah
+	var overlap_mobs = $sakit.get_overlapping_bodies()
+	if overlap_mobs.size() > 0:
+		darah -= 01 * overlap_mobs.size() 
+		
+	$"../../ControlLayer/Bardarah".value = int(darah)
+	$"../../ControlLayer/Bardarah/darah".text= str(int(darah)) +"/"+ str(global.player["maksdarah"])
 	
+	move_and_slide()

@@ -17,6 +17,8 @@ func _process(delta: float) -> void:
 	else :
 		pass
 
+func _ready() -> void:
+	_on_exit_pressed()
 
 func _on_interact_body_entered(body: Node2D) -> void:
 	is_inrange = true

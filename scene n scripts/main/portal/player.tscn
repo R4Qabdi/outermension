@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ck5tomos5i6if"]
+[gd_scene load_steps=22 format=3 uid="uid://ck5tomos5i6if"]
 
 [ext_resource type="Script" path="res://scene n scripts/main/portal/player.gd" id="1_d6qod"]
 [ext_resource type="Texture2D" uid="uid://0cdwjt60vtju" path="res://assets/main/temptsprite.png" id="2_04t27"]
@@ -139,8 +139,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g750t"]
-radius = 14.0
-height = 42.0
+radius = 12.0
+height = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h4xa0"]
+radius = 16.0
+height = 48.0
 
 [node name="player" type="CharacterBody2D"]
 collision_mask = 2
@@ -153,3 +157,10 @@ frame = 1
 
 [node name="tabrak" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_g750t")
+
+[node name="sakit" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sakit"]
+shape = SubResource("CapsuleShape2D_h4xa0")

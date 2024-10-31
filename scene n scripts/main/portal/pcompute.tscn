@@ -46,7 +46,7 @@ animations = [{
 size = Vector2(40, 28)
 
 [node name="pcompute" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_8dn2s")
 
 [node name="Coll" type="CollisionShape2D" parent="."]
