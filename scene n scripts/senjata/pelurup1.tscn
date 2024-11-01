@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://8ox6asw7ou0w"]
+
+[ext_resource type="Texture2D" uid="uid://cwqd5sj1tn2b8" path="res://assets/main/weapons/bulletp1.png" id="1_koeto"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akqg7"]
+atlas = ExtResource("1_koeto")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoh3b"]
+atlas = ExtResource("1_koeto")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7ld5"]
+atlas = ExtResource("1_koeto")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g20v4"]
+atlas = ExtResource("1_koeto")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6y3is"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akqg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoh3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7ld5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g20v4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o6t44"]
+radius = 4.0
+
+[node name="peluru" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_6y3is")
+frame_progress = 0.605579
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_o6t44")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]

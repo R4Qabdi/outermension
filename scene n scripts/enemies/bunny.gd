@@ -17,6 +17,8 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h=true
 	$AnimatedSprite2D.play("default")
 	move_and_slide()
+	
+	
 	#if hited :
 		#print("bnuyy = "+str(darah))
 		#hiting(0.1)

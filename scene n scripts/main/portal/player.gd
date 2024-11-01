@@ -1,10 +1,10 @@
 extends CharacterBody2D
-
+signal tembak
 #@onready var bunny: player = $"../../bunny"d
 @onready var mob = preload("res://scene n scripts/main/anim/spawn.tscn")
-var darah = 100.0
-
-const SPEED = 300.0
+var darah : float = 100.0
+var hurtable : bool = true
+const SPEED : float = 300.0
 #var kena = false
 
 #func hiting(ambil_darah) -> void:
@@ -24,23 +24,29 @@ func _physics_process(delta: float) -> void:
 				spawnable = true
 		get_parent().get_parent().add_child(ana)
 	
-	#ini sistem buat bisa gerak kemana karakternya
-	#nentuin hadapannya juga
-	var directionx := Input.get_axis("kiri", "kanan")
-	if directionx:
-		velocity.x = directionx * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	var directiony = Input.get_axis("naik", "turun")
-	if directiony:
-		velocity.y = directiony * SPEED
-	else:
-		velocity.y = move_toward(velocity.x, 0, SPEED)
+	if Input.is_action_just_pressed("serang"):
+		$senjata/senjata.play("default")
+		emit_signal("tembak")
+	if global.settings["JoystickOn"]:
+		if get_node_or_null("../../ControlLayer/UI/attack") and get_node_or_null("../../ControlLayer/UI/attack").is_pressed:
+			$senjata.rotation = get_node_or_null("../../ControlLayer/UI/attack").output.angle()
+			if $senjata/senjata.global_position > position:
+				$senjata/senjata.flip_v = false
+			else:
+				$senjata/senjata.flip_v = true
+	get_node_or_null("../../ControlLayer/UI/attack")
+	var input_direction = Input.get_vector("kiri", "kanan", "naik", "turun")
+	#negative x
+	#positive x
+	#negative y
+	#positive y
 	
+	velocity = input_direction * SPEED
 	#ini dipake biar pendek aja nama variabelnya
 	#fungsinya beda soalnya makanya aku ganti
-	var pex = directionx
-	var pey = directiony
+	
+	var pex = input_direction.x
+	var pey = input_direction.y
 	
 	#ini baru berfungsi agar animasinya menghadap kemana
 	if pey > -0.5 and pey < 0.5 and pex > 0:
@@ -56,11 +62,21 @@ func _physics_process(delta: float) -> void:
 	if pey == 0 and pex == 0:
 		$anim.stop()
 	
+	#don't touch this cooldown, it just works
 	var overlap_mobs = $sakit.get_overlapping_bodies()
 	if overlap_mobs.size() > 0:
-		darah -= 01 * overlap_mobs.size() 
+		if hurtable:
+			darah -= 5 * overlap_mobs.size()
+			print("timer stop")
+			hurtable=false
+			$dmg_cd.start()
 		
 	$"../../ControlLayer/Bardarah".value = int(darah)
 	$"../../ControlLayer/Bardarah/darah".text= str(int(darah)) +"/"+ str(global.player["maksdarah"])
 	
 	move_and_slide()
+	
+
+func _on_timer_timeout() -> void:
+	#darah -= 5 
+	hurtable = true
