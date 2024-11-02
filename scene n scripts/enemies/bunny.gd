@@ -5,6 +5,7 @@ signal hit
 signal gakena
 const BSPEED = 100
 
+@export var health = 10
 #var Player = player.new()
 var hited : bool = false
 
@@ -18,17 +19,11 @@ func _physics_process(delta: float) -> void:
 	$AnimatedSprite2D.play("default")
 	move_and_slide()
 	
-	
-	#if hited :
-		#print("bnuyy = "+str(darah))
-		#hiting(0.1)
-	
-#
-#func _on_kena_body_entered(body: Node2D) -> void:
-	#hited = true
-	#print("hit")
-#
-#
-#func _on_kena_body_exited(body: Node2D) -> void:
-	#hited = false
-	#print("nohit")
+
+func take_damage(amount):
+	health -= amount
+	if health <= 0:
+		mati()
+
+func mati():
+	queue_free()

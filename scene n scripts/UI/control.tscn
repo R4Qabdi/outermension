@@ -13,6 +13,12 @@ offset_right = 128.0
 offset_bottom = 32.0
 text = "coordinate : "
 
+[node name="enemy" type="Button" parent="debuglayer"]
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 63.0
+text = "spawn random"
+
 [node name="UI" parent="." instance=ExtResource("2_n7vc2")]
 
 [node name="menu" type="Button" parent="."]
@@ -260,6 +266,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "100/100"
 
+[connection signal="pressed" from="debuglayer/enemy" to="." method="_on_enemy_pressed"]
 [connection signal="toggled" from="menu" to="." method="_on_menu_toggled"]
 [connection signal="pressed" from="MenuLayer/Panel/TabContainer/Level/resume" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MenuLayer/Panel/TabContainer/Level/Exit2portal" to="." method="_on_exit_2_portal_pressed"]

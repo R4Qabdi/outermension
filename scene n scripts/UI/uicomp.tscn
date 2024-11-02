@@ -18,23 +18,24 @@ offset_left = 128.0
 offset_top = 96.0
 offset_right = 1024.0
 offset_bottom = 512.0
-current_tab = 2
+current_tab = 0
 
 [node name="WELCOME" type="TabBar" parent="Control/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="Label" type="Label" parent="Control/TabContainer/WELCOME"]
 layout_mode = 0
-offset_left = 336.0
-offset_top = 97.0
-offset_right = 560.0
-offset_bottom = 120.0
+offset_left = 240.0
+offset_top = 113.0
+offset_right = 678.0
+offset_bottom = 266.0
 text = "lorem ipsum dolor si amet
 kdjkdnskfdnkdfnkdfnkdf
 
-ksdfnksdnfkwnfekowf"
+ksdfnksdnfkwnfekowf
+
+Pencet aja start di endless, belum bisa klik apa apa disini"
 
 [node name="CAMPAIGN" type="TabBar" parent="Control/TabContainer"]
 visible = false
@@ -243,6 +244,7 @@ offset_bottom = 81.0
 text = "1-S"
 
 [node name="ENDLESS" type="TabBar" parent="Control/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

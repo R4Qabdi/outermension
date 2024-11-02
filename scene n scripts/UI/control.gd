@@ -128,3 +128,8 @@ func _on_exit_2_main_pressed() -> void:
 
 func _on_exit_2_portal_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene n scripts/main/portal/portal.tscn")
+
+
+func _on_enemy_pressed() -> void:
+	Input.action_press("spawn")
+	Input.action_release("spawn")

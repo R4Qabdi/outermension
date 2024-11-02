@@ -327,6 +327,15 @@ parameters/looping = false
 
 [node name="bunny" parent="." instance=ExtResource("12_kxe8o")]
 
+[node name="Label" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 104.0
+offset_right = 304.0
+offset_bottom = 153.0
+text = "pencet \"E\" disini
+di deket komputer
+"
+
 [connection signal="buka" from="pcompute" to="ControlLayer" method="_on_pcompute_buka"]
 [connection signal="tutup" from="pcompute" to="ControlLayer" method="_on_pcompute_tutup"]
 [connection signal="pressed" from="uicomputer/Control/exit" to="pcompute" method="_on_exit_pressed"]

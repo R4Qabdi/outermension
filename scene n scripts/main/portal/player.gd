@@ -4,12 +4,9 @@ signal tembak
 @onready var mob = preload("res://scene n scripts/main/anim/spawn.tscn")
 var darah : float = 100.0
 var hurtable : bool = true
+var attackable : bool = true
+var injoy : bool = false
 const SPEED : float = 300.0
-#var kena = false
-
-#func hiting(ambil_darah) -> void:
-	#print(darah)
-	#darah -= ambil_darah 
 
 
 func _physics_process(delta: float) -> void:
@@ -24,24 +21,34 @@ func _physics_process(delta: float) -> void:
 				spawnable = true
 		get_parent().get_parent().add_child(ana)
 	
-	if Input.is_action_just_pressed("serang"):
-		$senjata/senjata.play("default")
-		emit_signal("tembak")
-	if global.settings["JoystickOn"]:
+	#if Input.is_action_just_pressed("serang"):
+		#$senjata/senjata.play("default")
+		#emit_signal("tembak")
+	
+	#rotasi snejata
+	if global.settings["JoystickOn"] and global.injoy:
 		if get_node_or_null("../../ControlLayer/UI/attack") and get_node_or_null("../../ControlLayer/UI/attack").is_pressed:
 			$senjata.rotation = get_node_or_null("../../ControlLayer/UI/attack").output.angle()
-			if $senjata/senjata.global_position > position:
-				$senjata/senjata.flip_v = false
-			else:
-				$senjata/senjata.flip_v = true
-	get_node_or_null("../../ControlLayer/UI/attack")
-	var input_direction = Input.get_vector("kiri", "kanan", "naik", "turun")
-	#negative x
-	#positive x
-	#negative y
-	#positive y
+			Input.action_press("serang")
+	elif  !global.injoy:
+		$senjata.rotation = get_local_mouse_position().angle()
+		
+	if $senjata/senjata.global_position > position:
+		$senjata/senjata.flip_v = false
+	else:
+		$senjata/senjata.flip_v = true
 	
+	if attackable and Input.is_action_pressed("serang"):
+		emit_signal("tembak")
+		print("tembakk")
+		attackable=false
+		$att_cd.start()
+	
+	get_node_or_null("../../ControlLayer/UI/attack")
+	
+	var input_direction = Input.get_vector("kiri", "kanan", "naik", "turun")
 	velocity = input_direction * SPEED
+	
 	#ini dipake biar pendek aja nama variabelnya
 	#fungsinya beda soalnya makanya aku ganti
 	
@@ -78,5 +85,7 @@ func _physics_process(delta: float) -> void:
 	
 
 func _on_timer_timeout() -> void:
-	#darah -= 5 
 	hurtable = true
+
+func _on_att_cd_timeout() -> void:
+	attackable = true

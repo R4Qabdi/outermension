@@ -12,4 +12,4 @@ var player = {
 	"darah" = 100,
 	"maksdarah" = 100,
 }
-var kena : bool = false
+var injoy : bool = false

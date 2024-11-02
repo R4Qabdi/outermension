@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bg60pp2foowa3"]
+[gd_scene load_steps=3 format=3 uid="uid://bg60pp2foowa3"]
 
+[ext_resource type="Script" path="res://scene n scripts/UI/joystickui.gd" id="1_doye7"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_up3r4"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_doye7")
 
 [node name="move" parent="." instance=ExtResource("1_up3r4")]
+anchors_preset = -1
+anchor_top = 0.993827
+anchor_right = 0.00347222
 joystick_mode = 1
 action_left = "kiri"
 action_right = "kanan"
@@ -13,14 +18,31 @@ action_down = "turun"
 metadata/_edit_use_anchors_ = true
 
 [node name="attack" parent="." instance=ExtResource("1_up3r4")]
-anchors_preset = 3
+anchors_preset = -1
 anchor_left = 1.0
+anchor_top = 1.00617
 anchor_right = 1.0
-offset_left = -300.0
+anchor_bottom = 1.00617
+offset_left = -304.0
 offset_top = -300.0
 offset_right = 0.0
-offset_bottom = 0.0
+offset_bottom = -4.0
 grow_horizontal = 0
 joystick_mode = 1
 use_input_actions = false
 metadata/_edit_use_anchors_ = true
+
+[node name="Interact" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 272.0
+offset_bottom = 336.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+text = "E"
+
+[connection signal="mouse_entered" from="attack" to="." method="_on_attack_mouse_entered"]
+[connection signal="mouse_exited" from="attack" to="." method="_on_attack_mouse_exited"]
+[connection signal="pressed" from="Interact" to="." method="_on_interact_pressed"]

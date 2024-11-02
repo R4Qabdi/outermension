@@ -49,6 +49,7 @@ offset_left = 32.0
 offset_top = -312.0
 offset_right = 160.0
 offset_bottom = -264.0
+toggle_mode = true
 text = "OPTION"
 
 [node name="abouts" type="Button" parent="CanvasLayer/Control"]
@@ -57,6 +58,7 @@ offset_left = 32.0
 offset_top = -248.0
 offset_right = 160.0
 offset_bottom = -200.0
+toggle_mode = true
 text = "ABOUT"
 
 [node name="quit" type="Button" parent="CanvasLayer/Control"]
@@ -67,4 +69,178 @@ offset_right = 160.0
 offset_bottom = -136.0
 text = "QUIT GAME"
 
+[node name="option" type="CanvasLayer" parent="CanvasLayer"]
+visible = false
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/option"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 104.0
+offset_right = 320.0
+offset_bottom = 512.0
+current_tab = 0
+
+[node name="Volume" type="TabBar" parent="CanvasLayer/option/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_edit_lock_ = true
+
+[node name="MasterVolume" type="HSlider" parent="CanvasLayer/option/TabContainer/Volume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.003
+anchor_right = 0.5
+anchor_bottom = 0.003
+offset_left = -192.0
+offset_top = 63.941
+offset_right = 160.0
+offset_bottom = 95.941
+min_value = -20.0
+max_value = 10.0
+step = 0.1
+value = 5.0
+
+[node name="mute" type="Button" parent="CanvasLayer/option/TabContainer/Volume/MasterVolume"]
+layout_mode = 0
+offset_left = 352.0
+offset_right = 384.0
+offset_bottom = 32.0
+toggle_mode = true
+
+[node name="Label" type="Label" parent="CanvasLayer/option/TabContainer/Volume/MasterVolume"]
+layout_mode = 0
+offset_top = -32.0
+offset_right = 112.0
+text = "Master Volume"
+
+[node name="SFXVolume" type="HSlider" parent="CanvasLayer/option/TabContainer/Volume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.003
+anchor_right = 0.5
+anchor_bottom = 0.003
+offset_left = -192.0
+offset_top = 143.941
+offset_right = 160.0
+offset_bottom = 175.941
+max_value = 10.0
+
+[node name="mute" type="Button" parent="CanvasLayer/option/TabContainer/Volume/SFXVolume"]
+layout_mode = 0
+offset_left = 352.0
+offset_right = 384.0
+offset_bottom = 32.0
+toggle_mode = true
+
+[node name="Label" type="Label" parent="CanvasLayer/option/TabContainer/Volume/SFXVolume"]
+layout_mode = 0
+offset_top = -32.0
+offset_right = 96.0
+text = "SFX Volume"
+
+[node name="MusicVolume" type="HSlider" parent="CanvasLayer/option/TabContainer/Volume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.003
+anchor_right = 0.5
+anchor_bottom = 0.003
+offset_left = -192.0
+offset_top = 223.941
+offset_right = 160.0
+offset_bottom = 255.941
+min_value = -10.0
+max_value = 5.0
+step = 0.1
+value = 5.0
+
+[node name="mute" type="Button" parent="CanvasLayer/option/TabContainer/Volume/MusicVolume"]
+layout_mode = 0
+offset_left = 352.0
+offset_right = 384.0
+offset_bottom = 32.0
+toggle_mode = true
+
+[node name="Label" type="Label" parent="CanvasLayer/option/TabContainer/Volume/MusicVolume"]
+layout_mode = 0
+offset_top = -32.0
+offset_right = 112.0
+text = "Music Volume"
+
+[node name="Graphics" type="TabBar" parent="CanvasLayer/option/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_edit_lock_ = true
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/option/TabContainer/Graphics"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 81.0
+offset_right = 448.0
+offset_bottom = 129.0
+selected = 1
+item_count = 6
+popup/item_0/text = "960 × 540"
+popup/item_1/text = "1152 × 648"
+popup/item_1/id = 1
+popup/item_2/text = "1280 × 720"
+popup/item_2/id = 2
+popup/item_3/text = "1920 × 1080 "
+popup/item_3/id = 3
+popup/item_4/text = "2560 × 1080"
+popup/item_4/id = 4
+popup/item_5/text = "2560 × 1440"
+popup/item_5/id = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/option/TabContainer/Graphics/OptionButton"]
+layout_mode = 0
+offset_top = -48.0
+offset_right = 160.0
+text = "display resolution"
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/option/TabContainer/Graphics"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 145.0
+offset_right = 448.0
+offset_bottom = 193.0
+text = "Full screen mode"
+
+[node name="Label" type="Label" parent="CanvasLayer/option"]
+offset_left = 336.0
+offset_top = 416.0
+offset_right = 376.0
+offset_bottom = 439.0
+text = "belum bisa di klik ini tombolnya nanti dah, aku ngantuk"
+
+[node name="credit" type="CanvasLayer" parent="CanvasLayer"]
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer/credit"]
+offset_left = 280.0
+offset_top = 528.0
+offset_right = 650.0
+offset_bottom = 629.0
+text = "AKU BELUM BIKIN CREDITNYA
+
+KALO PENASARA YA... >~> aku semua yang bikin
+kecuali lagu, lagu nya kevin macleod"
+
 [connection signal="pressed" from="CanvasLayer/Control/start" to="." method="_on_start_pressed"]
+[connection signal="toggled" from="CanvasLayer/Control/option" to="." method="_on_option_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/abouts" to="." method="_on_abouts_toggled"]
+[connection signal="pressed" from="CanvasLayer/Control/quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="CanvasLayer/option/TabContainer/Volume/MasterVolume" to="." method="_on_master_volume_value_changed"]
+[connection signal="toggled" from="CanvasLayer/option/TabContainer/Volume/MasterVolume/mute" to="." method="_on_mute_toggled"]
+[connection signal="value_changed" from="CanvasLayer/option/TabContainer/Volume/SFXVolume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="toggled" from="CanvasLayer/option/TabContainer/Volume/SFXVolume/mute" to="." method="_on_mutesfx_toggled"]
+[connection signal="value_changed" from="CanvasLayer/option/TabContainer/Volume/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="toggled" from="CanvasLayer/option/TabContainer/Volume/MusicVolume/mute" to="." method="_on_mutemusic_toggled"]
+[connection signal="item_selected" from="CanvasLayer/option/TabContainer/Graphics/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="CanvasLayer/option/TabContainer/Graphics/CheckButton" to="." method="_on_check_button_toggled"]
