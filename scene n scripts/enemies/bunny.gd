@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var xp = preload("res://scene n scripts/main/portal/mob.tscn")
 
 signal hit
 signal gakena
@@ -26,4 +27,7 @@ func take_damage(amount):
 		mati()
 
 func mati():
+	var hah = xp.instantiate()
+	hah.global_position= global_position
+	get_parent().call_deferred("add_child",hah)
 	queue_free()

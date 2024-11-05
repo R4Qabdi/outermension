@@ -109,6 +109,14 @@ offset_bottom = 145.0
 button_pressed = true
 text = "Debug mode"
 
+[node name="mouse2aim" type="CheckButton" parent="MenuLayer/Panel/TabContainer/Control"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 161.0
+offset_right = 496.0
+offset_bottom = 192.0
+text = "mouse to aim"
+
 [node name="Volume" type="TabBar" parent="MenuLayer/Panel/TabContainer"]
 visible = false
 layout_mode = 2
@@ -273,6 +281,7 @@ text = "100/100"
 [connection signal="pressed" from="MenuLayer/Panel/TabContainer/Level/Exit2main" to="." method="_on_exit_2_main_pressed"]
 [connection signal="toggled" from="MenuLayer/Panel/TabContainer/Control/joystick" to="." method="_on_joystick_toggled"]
 [connection signal="toggled" from="MenuLayer/Panel/TabContainer/Control/CheckButton2" to="." method="_on_check_button_2_toggled"]
+[connection signal="toggled" from="MenuLayer/Panel/TabContainer/Control/mouse2aim" to="." method="_on_mouse_2_aim_toggled"]
 [connection signal="value_changed" from="MenuLayer/Panel/TabContainer/Volume/MasterVolume" to="." method="_on_master_volume_value_changed"]
 [connection signal="toggled" from="MenuLayer/Panel/TabContainer/Volume/MasterVolume/mute" to="." method="_on_master_mute_toggled"]
 [connection signal="value_changed" from="MenuLayer/Panel/TabContainer/Volume/SFXVolume" to="." method="_on_sfx_volume_value_changed"]

@@ -3,6 +3,7 @@ extends Node
 var settings = {
 	"JoystickOn" = true,
 	"DebugMode" = true,
+	"MouseAim" = false,
 	"Mastervolume" = 1.0,
 	"Musicvolume" = 1.0,
 	"SFXvolume" = 1.0,

@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0kq1q2dw5abm"]
+
+[ext_resource type="Script" path="res://scene n scripts/UI/game_over.gd" id="1_lp8lm"]
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_lp8lm")
+
+[node name="biarenakanimasinya" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="biarenakanimasinya"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Panel" type="Panel" parent="biarenakanimasinya"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 896.0
+offset_bottom = 512.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="biarenakanimasinya/Panel"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 384.0
+
+[node name="Label" type="Label" parent="biarenakanimasinya/Panel"]
+layout_mode = 2
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 46
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="score" type="Label" parent="biarenakanimasinya/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.583
+anchor_right = 0.3
+anchor_bottom = 0.583
+offset_top = 0.127991
+offset_right = 256.0
+offset_bottom = 32.128
+text = "You're score is : "
+
+[node name="Label2" type="Label" parent="biarenakanimasinya/Panel"]
+layout_mode = 2
+offset_top = 256.0
+offset_right = 640.0
+offset_bottom = 288.0
+text = "Do you want to try again?"
+horizontal_alignment = 1
+
+[node name="tryagain" type="Button" parent="biarenakanimasinya/Panel"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 304.0
+offset_right = 256.0
+offset_bottom = 336.0
+text = "Try again"
+
+[node name="giveup" type="Button" parent="biarenakanimasinya/Panel"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 304.0
+offset_right = 512.0
+offset_bottom = 336.0
+text = "Give up"
+
+[connection signal="pressed" from="biarenakanimasinya/Panel/tryagain" to="." method="_on_tryagain_pressed"]
+[connection signal="pressed" from="biarenakanimasinya/Panel/giveup" to="." method="_on_giveup_pressed"]

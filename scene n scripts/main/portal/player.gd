@@ -30,7 +30,8 @@ func _physics_process(delta: float) -> void:
 		if get_node_or_null("../../ControlLayer/UI/attack") and get_node_or_null("../../ControlLayer/UI/attack").is_pressed:
 			$senjata.rotation = get_node_or_null("../../ControlLayer/UI/attack").output.angle()
 			Input.action_press("serang")
-	elif  !global.injoy:
+	elif  !global.injoy and global.settings["MouseAim"]:
+		
 		$senjata.rotation = get_local_mouse_position().angle()
 		
 	if $senjata/senjata.global_position > position:
@@ -39,8 +40,7 @@ func _physics_process(delta: float) -> void:
 		$senjata/senjata.flip_v = true
 	
 	if attackable and Input.is_action_pressed("serang"):
-		emit_signal("tembak")
-		print("tembakk")
+		tembak.emit()
 		attackable=false
 		$att_cd.start()
 	

@@ -7,10 +7,12 @@ func _process(delta: float) -> void:
 	if is_inrange:
 		if Input.is_action_just_pressed("interact"):
 			if tog:
+				get_tree().paused=true
 				$"../uicomputer".visible = true
 				buka.emit()
 				tog = not tog
 			elif !tog: 
+				get_tree().paused=false
 				tog = not tog
 				_on_exit_pressed()
 				tutup.emit()

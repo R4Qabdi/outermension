@@ -3,11 +3,7 @@ extends CanvasLayer
 @onready var joystick = preload("res://scene n scripts/UI/joystickui.tscn")
 
 var settings = {
-	"JoystickOn" = true,
-	"DebugMode" = true,
-	"Mastervolume" = 1.0,
-	"Musicvolume" = 1.0,
-	"SFXvolume" = 1.0,
+
 }
 var temp
 
@@ -24,10 +20,12 @@ func _ready() -> void:
 
 func _on_menu_toggled(toggled_on: bool) -> void:
 	if toggled_on:
+		get_tree().paused = true
 		$MenuLayer.visible = true
 		tutup_joystick()
 
 	if !toggled_on:
+		get_tree().paused = false
 		$MenuLayer.visible = false
 		buka_joystick()
 
@@ -133,3 +131,10 @@ func _on_exit_2_portal_pressed() -> void:
 func _on_enemy_pressed() -> void:
 	Input.action_press("spawn")
 	Input.action_release("spawn")
+
+
+func _on_mouse_2_aim_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		global.settings["MouseAim"] = true
+	else :
+		global.settings["MouseAim"] = false

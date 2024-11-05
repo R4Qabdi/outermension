@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://f81knc06e25"]
+[gd_scene load_steps=11 format=3 uid="uid://f81knc06e25"]
 
 [ext_resource type="Script" path="res://scene n scripts/main/portal/mob.gd" id="1_b3ud4"]
 [ext_resource type="Texture2D" uid="uid://d3riairvfmc0c" path="res://assets/main/inportal/temptenemy.png" id="1_pdvf8"]
@@ -46,9 +46,12 @@ animations = [{
 radius = 12.0
 height = 32.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jp1ru"]
+size = Vector2(256, 256)
+
 [node name="mob" type="CharacterBody2D"]
 collision_layer = 0
-collision_mask = 3
+collision_mask = 0
 script = ExtResource("1_b3ud4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -58,17 +61,24 @@ metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_csu21")
-frame = 3
-frame_progress = 0.916003
+frame_progress = 0.640651
 metadata/_edit_lock_ = true
 
 [node name="kena" type="Area2D" parent="."]
-collision_layer = 129
+collision_layer = 0
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kena"]
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_wue7k")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="detect" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect"]
+shape = SubResource("RectangleShape2D_jp1ru")
 
 [connection signal="body_entered" from="kena" to="." method="_on_kena_body_entered"]
+[connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
+[connection signal="body_exited" from="detect" to="." method="_on_detect_body_exited"]
