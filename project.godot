@@ -28,9 +28,7 @@ global="*res://global.gd"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={
-"timelines/test": "res://dialogics/timelines/test.dtl"
-}
+directories/dtl_directory={}
 layout/style_list=[]
 layout/default_style="Default"
 
